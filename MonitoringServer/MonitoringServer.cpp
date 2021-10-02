@@ -5,8 +5,8 @@
 #include "MonitorProtocol.h"
 #include "MonitoringNetServer.h"
 #include "PacketProcess.h"
-
-
+#include <process.h>
+#include "DBConnector.h"
 MyMonitoringLanServer::MyMonitoringLanServer()
     :LanServer(this)
 {
@@ -14,11 +14,37 @@ MyMonitoringLanServer::MyMonitoringLanServer()
     wcscpy_s(m_BlackIPList[0], L"130.0.0.1");
 }
 
+unsigned int __stdcall MyMonitoringLanServer::DataSaveToDBThread(LPVOID param)
+{
+    DWORD curTime = timeGetTime();
+    MyMonitoringLanServer* monitorServer = (MyMonitoringLanServer*)param;
+
+    while (true)
+    {
+        //--------------------------------------------------
+        // 5분마다 각 type별 Data를 정산해서 DB에 동기로 보내기
+        //--------------------------------------------------
+        if (timeGetTime() - curTime> 300000)
+        {
+            //monitorServer->m_TLSDBCon->Query()
+        }
+    }
+    return 0;
+}
+
 bool MyMonitoringLanServer::MonitorServerStart(WCHAR* ip, uint16_t port, DWORD runningThread, SocketOption& option, DWORD workerThreadCount, DWORD maxUserCount, TimeOutOption& timeOutOption)
 {
+    //--------------------------------------------------
+    // DB Connector 생성
+    //--------------------------------------------------
+    m_TLSDBCon = new TLSDBConnector(SQL_IP, L"3306", L"root", L"tpwhd963", L"accountdb", workerThreadCount);
+
+    m_DataSaveToDBThread = (HANDLE)_beginthreadex(NULL, 0, MyMonitoringLanServer::DataSaveToDBThread, this, 0, NULL);
+
     ServerStart(ip, port, runningThread, option, workerThreadCount, maxUserCount, timeOutOption);
     m_NetServerLib = new MonitoringNetServer();
     m_NetServerLib->ServerStart(ip, 8888, 1, option, 1, 10, timeOutOption);
+
 
     return true;
 }

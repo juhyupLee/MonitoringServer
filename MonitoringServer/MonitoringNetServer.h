@@ -32,6 +32,8 @@ class MonitoringNetServer : public NetServer
 		uint16_t _Port;
 	};
 
+
+
 public:
 	MonitoringNetServer();
 	void ServerMonitorPrint();

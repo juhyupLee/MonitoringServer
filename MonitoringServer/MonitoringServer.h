@@ -1,6 +1,9 @@
 #pragma once
 #include "LanServerLib.h"
 
+#define SQL_IP L"10.0.2.2"
+
+class TLSDBConnector;
 class MonitoringNetServer;
 
 class MyMonitoringLanServer : public LanServer
@@ -34,6 +37,10 @@ class MyMonitoringLanServer : public LanServer
 		uint16_t _Port;
 	};
 
+
+private:
+	static unsigned int __stdcall DataSaveToDBThread(LPVOID param);
+
 public:
 	bool MonitorServerStart(WCHAR* ip, uint16_t port, DWORD runningThread, SocketOption& option, DWORD workerThreadCount, DWORD maxUserCount, TimeOutOption& timeOutOption);
 	MyMonitoringLanServer();
@@ -57,6 +64,9 @@ public:
 private:
 	Client* FindClient(uint64_t sessionID);
 private:
+
+	TLSDBConnector* m_TLSDBCon;
+	HANDLE m_DataSaveToDBThread;
 	MonitoringNetServer* m_NetServerLib;
 	std::unordered_map<uint64_t, Client*> m_ClientMap;
 	MyLock m_ClientMapLock;

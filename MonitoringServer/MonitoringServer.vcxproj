@@ -141,7 +141,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CharacterEncoding.cpp" />
     <ClCompile Include="CPUUsage.cpp" />
+    <ClCompile Include="DBConnector.cpp" />
     <ClCompile Include="FreeList.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="LanClientLib.cpp" />
@@ -160,7 +162,9 @@
     <ClCompile Include="SerializeBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CharacterEncoding.h" />
     <ClInclude Include="CPUUsage.h" />
+    <ClInclude Include="DBConnector.h" />
     <ClInclude Include="FreeList.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="LanClientLib.h" />

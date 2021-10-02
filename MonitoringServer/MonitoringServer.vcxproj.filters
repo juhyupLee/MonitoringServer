@@ -22,6 +22,9 @@
     <Filter Include="Contents">
       <UniqueIdentifier>{a7d0c363-f558-4fc7-8af1-b3e263ab2812}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DB">
+      <UniqueIdentifier>{c78e6f13-0f52-4159-90ae-43dce13bf34f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +77,12 @@
     </ClCompile>
     <ClCompile Include="MonitoringNetServer.cpp">
       <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="DBConnector.cpp">
+      <Filter>DB</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterEncoding.cpp">
+      <Filter>DB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="Option.h">
       <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="DBConnector.h">
+      <Filter>DB</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterEncoding.h">
+      <Filter>DB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
