@@ -55,7 +55,7 @@ public:
 //#endif
 	bool SendPost(uint64_t  sessionID);
 
-protected:
+public:
 	//------------------------------------------
 	// Getter
 	//------------------------------------------

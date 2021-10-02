@@ -3,7 +3,7 @@
 // 0 : Non Log
 // 1 : g_Log
 // 2 : Session Log && g_Log 
-#define MEMORYLOG_USE 2
+#define MEMORYLOG_USE 0
 //------------------------------------------------------
 //------------------------------------------------------
 // 0 : Non Log
@@ -121,7 +121,7 @@ public:
 
 	bool SendPost(uint64_t  sessionID);
 
-protected:
+public:
 	//------------------------------------------
 	// Getter
 	//------------------------------------------
@@ -151,7 +151,7 @@ public:
 
 
 protected:
-	void Crash();
+	static void Crash();
 private:
 	static unsigned int __stdcall AcceptThread(LPVOID param);
 	static unsigned int __stdcall WorkerThread(LPVOID param);

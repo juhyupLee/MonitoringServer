@@ -7,8 +7,6 @@
 #include <timeapi.h>
 
 
-
-
 LanServer::LanServer(LanServer* contents)
 	:m_Contents(contents)
 {
@@ -582,13 +580,8 @@ unsigned  __stdcall LanServer::WorkerThread(LPVOID param)
 				if (curOverlap == &curSession->_RecvOL)
 				{
 
-					if (gqcsRtn == TRUE)
-					{
-						lanServer->Crash();
-					}
 					curSession->_TransferZero = 5;
 					
-					//_LOG(LOG_LEVEL_ERROR, L"TransferByZero Recv  ErrorCode:%d, GQCS Rtn:%d RecvRingQ Size:%d, SendQRingQSize :%d",curSession->_ErrorCode, gqcsRtn, curSession->_RecvRingQ.GetUsedSize(),curSession->_SendQ.m_Count);
 #if MEMORYLOG_USE ==1 
 					log.DataSettiong(InterlockedIncrement64(&g_IOCPMemoryNo), eIOCP_LINE::TRANSFER_ZERO_RECV, GetCurrentThreadId(), curSession->_Socket, curSession->_IOCount, (int64_t)curSession, sessionID, (int64_t)&curSession->_RecvOL, (int64_t)&curSession->_SendOL, curSession->_SendFlag);
 					g_MemoryLog_IOCP.MemoryLogging(log);
@@ -832,7 +825,6 @@ void LanServer::ReleaseSession(Session * delSession)
 	{
 		InterlockedIncrement(&g_TCPTimeoutReleaseCnt);
 	}
-
 	//---------------------------------------
 	// CAS로 IOCOUNT의 최상위비트를  ReleaseFlag로 쓴다
 	//---------------------------------------
