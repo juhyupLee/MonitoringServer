@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{57271fe9-b989-4ada-9a4d-dbae0f29b7eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Global">
+      <UniqueIdentifier>{f3bde0a7-ed65-4aa5-bdef-6a8874a2e2b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{96eb299e-f987-4a52-94d4-cf7fba2ffb86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetLib">
+      <UniqueIdentifier>{9edf33f4-9dde-472e-9f70-bfef6d99336d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protocol">
+      <UniqueIdentifier>{9a1284c0-9580-4fea-bc66-02c0deb3caa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LanLib">
+      <UniqueIdentifier>{d4105867-7dba-4d7d-9489-b93db61453c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{a7d0c363-f558-4fc7-8af1-b3e263ab2812}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CPUUsage.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeList.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="LockFreeQ.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryDump.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="MonitorPDH.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Profiler.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBuffer.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializeBuffer.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="LanServerLib.cpp">
+      <Filter>LanLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MonitoringServer.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="LanClientLib.cpp">
+      <Filter>LanLib</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketProcess.cpp">
+      <Filter>Protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="NetServerLib.cpp">
+      <Filter>NetLib</Filter>
+    </ClCompile>
+    <ClCompile Include="MonitoringNetServer.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CPUUsage.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeList.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="LockFreeQ.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="LockFreeStack.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryDump.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryLog.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPool_TLS.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitorPDH.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Profiler.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBuffer.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializeBuffer.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="LanServerLib.h">
+      <Filter>LanLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitoringServer.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitorProtocol.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="LanClientLib.h">
+      <Filter>LanLib</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketProcess.h">
+      <Filter>Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitoringNetServer.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="NetServerLib.h">
+      <Filter>NetLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Option.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="NatvisFile.natvis" />
+  </ItemGroup>
+</Project>
