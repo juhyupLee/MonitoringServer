@@ -33,7 +33,7 @@ public:
 
 		};
 		Session()
-			:_SendQ(5000) //SendQ QCount 일단 오천개로 제한.
+			:_SendQ(50000) 
 		{
 			_Socket = 0;
 			_IOCount = 1;
